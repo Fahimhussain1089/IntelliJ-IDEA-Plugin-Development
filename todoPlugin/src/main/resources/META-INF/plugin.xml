@@ -1,0 +1,49 @@
+
+<idea-plugin>
+    <id>com.hussain.todoHighlighter</id>
+    <name>TODO Highlighter</name>
+    <vendor email="you@example.com">hii hussain this is testing fiest for the plugin</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <lineMarkerProvider language="kotlin" implementationClass="com.hussain.todoHighlighter.TodoLineMarkerProvider"/>
+        <toolWindow id="TodoToolWindow"
+                    anchor="right"
+                    factoryClass="com.hussain.todoHighlighter.TodoToolWindowFactory"/>
+    </extensions>
+
+
+
+    <actions>
+        <action id="MySimpleAction"
+                class="com.hussain.todoHighlighter.MySimpleAction"
+                text=" Hello hussain "
+                description="Click to see a message">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    <extensions defaultExtensionNs="com.intellij">
+        <highlightingPassFactory implementation="org.example.com.hussain.todohighlighter2.TodoHighlightingPassFactory"/>
+    </extensions>
+    //+++++++++++++++++++++++++++++++++++
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="org.example.com.hussain.todohighlighter2.TodoState"/>
+    </extensions>
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+<!--    </extensions>-->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="TODO Viewer" anchor="right"
+                    factoryClass="org.example.com.hussain.todohighlighter2.TodoToolWindowFactory"/>
+    </extensions>
+
+
+
+
+    <depends>com.intellij.modules.platform</depends>
+
+
+</idea-plugin>
+
